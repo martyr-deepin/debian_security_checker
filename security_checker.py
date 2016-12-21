@@ -2,6 +2,7 @@
 import requests
 import re
 from lxml import html
+import json
 root_url = "https://lists.debian.org/debian-security-announce/2016/"
 mail_index_url = root_url + "threads.html"
 mail_index = requests.get(mail_index_url).text
@@ -53,3 +54,5 @@ for url in pkg_url_list:
     whole_info.append(get_package_info(url))
 
 print(whole_info)
+with open('result.json', 'w') as fp:
+    json.dump(whole_info, fp)
