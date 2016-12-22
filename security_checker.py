@@ -47,6 +47,7 @@ def get_package_info(url):
     package_info["debian_bug"] = debian_bug
     package_info["stable"] = stable_version
     package_info["unstable"] = unstable_version
+    package_info["url"] = url
     return package_info
 
 whole_info = []
