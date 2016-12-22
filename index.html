@@ -1,0 +1,57 @@
+<html>
+<body>
+<div id="id01"></div></div>
+<script>
+var xmlhttp = new XMLHttpRequest();
+var url = "result.json";
+
+xmlhttp.onreadystatechange=function() {
+    if (xmlhttp.readyState == 4 && xmlhttp.status == 200) {
+        myFunction(xmlhttp.responseText);
+    }
+}
+xmlhttp.open("GET", url, true);
+xmlhttp.send();
+
+function myFunction(response) {
+    var obj = JSON.parse(response);
+    var arr = obj
+    var i;
+    var out = "<table>";
+    out += "<tr><td>"+ 
+        "Package" +
+        "</td><td>" +
+        "Url" +
+        "</td><td>" +
+        "CVE" +
+        "</td><td>" +
+        "stable" +
+        "</td><td>" +
+        "unstable" +
+        "</td><td>" +
+        "Date" +
+        "</td></tr>";
+
+    for(i = 0; i < arr.length; i++) {
+        out += "<tr><td>" + 
+        arr[i].package +
+        "</td><td>" +
+        "<a href=\"" +
+        arr[i].url +
+        "\">DSA</a>" +
+        "</td><td>" +
+        arr[i].CVE_ID +
+        "</td><td>" +
+        arr[i].stable +
+        "</td><td>" +
+        arr[i].unstable +
+        "</td><td>" +
+        arr[i].date +
+        "</td></tr>";
+    }
+    out += "</table>";
+    document.getElementById("id01").innerHTML = out;
+}
+</script>
+</body>
+</html>
