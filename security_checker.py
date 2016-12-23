@@ -24,7 +24,7 @@ def get_package_info(url):
     re_cve = re.compile("CVE ID         : (.+)")
     re_debian_bug = re.compile("Debian Bug     : (.+)")
     re_stable = re.compile("For the stable.+fixed in\\nversion (.+)\.")
-    re_unstable = re.compile("For the unstable.+fixed in\\nversion (.+)\.")
+    re_unstable = re.compile("For the.+unstable.+\\n.+ersion (.+)\.")
     package_name = re_package.findall(url_text)[0]
     _date = re_date.findall(url_text)[0]
     if len(re_cve.findall(url_text)):
