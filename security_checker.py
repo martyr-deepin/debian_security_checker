@@ -3,7 +3,7 @@ import requests
 import re
 from lxml import html
 import json
-root_url = "https://lists.debian.org/debian-security-announce/2016/"
+root_url = "https://lists.debian.org/debian-security-announce/2017/"
 mail_index_url = root_url + "threads.html"
 mail_index = requests.get(mail_index_url).text
 r_mail_index = re.compile("\[SECURITY\] \[.+\] (.+) security update")
