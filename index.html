@@ -3,7 +3,19 @@
 <style>
 table, th, td {
     border: 1px solid black;
+    border-collapse: collapse;
+
 }
+th:hover{
+    background-color:#f5f5f5
+}
+tr:nth-child(even){
+    background-color: #f2f2f2
+}
+th {
+    background-color: #4CAF50;
+    color: white;
+    }
 </style>
 </head>
 <body>
@@ -25,19 +37,19 @@ function myFunction(response) {
     var arr = obj
     var i;
     var out = "<table>";
-    out += "<tr><td>"+ 
+    out += "<tr><th>"+ 
         "Package" +
-        "</td><td>" +
+        "</th><th>" +
         "Url" +
-        "</td><td>" +
+        "</th><th>" +
         "CVE" +
-        "</td><td>" +
+        "</th><th>" +
         "stable" +
-        "</td><td>" +
+        "</th><th>" +
         "unstable" +
-        "</td><td>" +
+        "</th><th>" +
         "Date" +
-        "</td></tr>";
+        "</th></tr>";
 
     for(i = 0; i < arr.length; i++) {
         out += "<tr><td>" + 
