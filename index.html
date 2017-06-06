@@ -1,6 +1,6 @@
 <html>
 <head>
-<style>
+<style style-src 'self' 'nonce-...'>
 table, th, td {
     border: 1px solid black;
     border-collapse: collapse;
@@ -22,7 +22,7 @@ th {
 <div id="id01"></div></div>
 <script>
 var xmlhttp = new XMLHttpRequest();
-var url = "result.json";
+var url = "https://ci.deepin.io/job/debian_security_checker/lastSuccessfulBuild/artifact/result.json";
 
 xmlhttp.onreadystatechange=function() {
     if (xmlhttp.readyState == 4 && xmlhttp.status == 200) {
