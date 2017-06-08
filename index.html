@@ -22,7 +22,7 @@ th {
 <div id="id01"></div></div>
 <script>
 var xmlhttp = new XMLHttpRequest();
-var url = "result.json";
+var url = "compared.json";
 
 xmlhttp.onreadystatechange=function() {
     if (xmlhttp.readyState == 4 && xmlhttp.status == 200) {
@@ -48,6 +48,8 @@ function myFunction(response) {
         "</th><th>" +
         "unstable" +
         "</th><th>" +
+        "panda" +
+        "</th><th>" +
         "Date" +
         "</th></tr>";
 
@@ -64,6 +66,8 @@ function myFunction(response) {
         arr[i].stable +
         "</td><td>" +
         arr[i].unstable +
+        "</td><td>" +
+        arr[i].repo_version +
         "</td><td>" +
         arr[i].date +
         "</td></tr>";
