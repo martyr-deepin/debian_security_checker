@@ -15,7 +15,7 @@ for security_package in data:
         if apt_cache[pkg.name].candidate.source_name == compared["package"]:
             compared["repo_version"] = apt_cache[pkg.name].candidate.version
             break
-    if compared["unstable"] !="" and os.system("dpkg --compare-versions %s gt %s"%(compared["unstable"].split(' ')[0],compared["repo_version"])) == 0:
+    if compared["unstable"] !="none" and os.system("dpkg --compare-versions %s gt %s"%(compared["unstable"].split(' ')[0],compared["repo_version"])) == 0:
         compared["panda_status"] = "danger"
     else:
         compared["panda_status"] ="safe"
