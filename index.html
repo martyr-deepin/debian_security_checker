@@ -56,27 +56,6 @@ function myFunction(response) {
         "</th></tr>";
 
     for(i = 0; i < arr.length; i++) {
-	if arr[i].panda_status == "danger"
-            out += "<tr><td>" + 
-            arr[i].package +
-            "</td><td>" +
-            "<a href=\"" +
-            arr[i].url +
-            "\">DSA</a>" +
-            "</td><td>" +
-            arr[i].CVE_ID +
-            "</td><td>" +
-            arr[i].stable +
-            "</td><td>" +
-            arr[i].unstable +
-            "</td><td>" +
-            arr[i].repo_version +
-            "</td><td color=\"red\">" +
-	    arr[i].panda_status +
-            "</td><td>" +
-            arr[i].date +
-            "</td></tr>";
-	else:
             out += "<tr><td>" + 
             arr[i].package +
             "</td><td>" +
