@@ -42,6 +42,7 @@ def get_package_info(url):
 
     if len(re_unstable.findall(url_text)):
         unstable_version = re_unstable.findall(url_text)[0]
+        unstable_version = unstable_version.split(' ')[0]
     else:
         unstable_version = 'none'
     package_info["date"] = _date
