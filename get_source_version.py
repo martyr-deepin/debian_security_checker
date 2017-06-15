@@ -1,6 +1,8 @@
 #!/usr/bin/python3
 import apt
 import json
+import os
+import sys
 
 apt_cache = apt.Cache()
 with open('result.json','r') as f:
