@@ -15,11 +15,11 @@ for security_package in data:
         if apt_cache[pkg.name].candidate.source_name == compared["package"]:
             compared["repo_version"] = apt_cache[pkg.name].candidate.version
             break
-    compared_list.append(compared)
     if os.system("dpkg --compare-versions %s gt %s"%(compared["unstable"],compared["repo_version"])) == 0:
-        compared_list["panda_status"] = "danger"
+        compared["panda_status"] = "danger"
     else:
-        compared_list["panda_status"] ="safe"
+        compared["panda_status"] ="safe"
+    compared_list.append(compared)
 
 with open('compared.json','w') as f:
     json.dump(compared_list,f)
